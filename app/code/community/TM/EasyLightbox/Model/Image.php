@@ -1,4 +1,5 @@
 <?php
+
 class TM_EasyLightbox_Model_Image extends Mage_Core_Model_Abstract
 {
     protected $_width;
@@ -202,7 +203,7 @@ class TM_EasyLightbox_Model_Image extends Mage_Core_Model_Abstract
             ))
         );
         $this->_newFile = implode('/', $path) . $file;
-        
+
         return $this;
     }
 

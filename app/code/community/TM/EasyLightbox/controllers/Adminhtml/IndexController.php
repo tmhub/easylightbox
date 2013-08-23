@@ -5,7 +5,7 @@ class TM_EasyLightbox_Adminhtml_IndexController extends Mage_Adminhtml_Controlle
     public function saveAction()
     {
         $path = Mage::getBaseDir('media') . '/easylightbox/';
-        if ($this->getRequest()->isPost()){
+        if ($this->getRequest()->isPost()) {
             try{
                 $uploader = new Varien_File_Uploader('image');
                 $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));

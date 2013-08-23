@@ -1,7 +1,8 @@
 <?php
+
 class TM_EasyLightbox_Helper_Image extends Mage_Core_Helper_Abstract
 {
-protected $_model;
+    protected $_model;
     protected $_scheduleResize = false;
     protected $_scheduleRotate = false;
     protected $_angle;
@@ -461,5 +462,4 @@ protected $_model;
         }
         return true;
     }
-
 }

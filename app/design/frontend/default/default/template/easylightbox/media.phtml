@@ -1,7 +1,7 @@
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
-    
+
     $_lightboxConfig = Mage::getStoreConfig('easy_lightbox/general');
     /* Main Image Size */
     if (strstr($_lightboxConfig['mainImageSize'], '_')) {
@@ -14,32 +14,32 @@
         $popupImageSize = explode('_', $_lightboxConfig['popupImageSize'], 2);
     } else {
         $popupImageSize = array(0, 0);
-    } 
+    }
     /* Additional Images Size */
     if (strstr($_lightboxConfig['additionalImageSize'], '_')) {
         $additionalImageSize = explode('_', $_lightboxConfig['additionalImageSize'], 2);
     } else {
         $additionalImageSize = array(60, 60);
     }
-    
+
     $image = $this->helper('catalog/image')->init($_product, 'image');
     if ($popupImageSize[0] > 0) {
         $image = $this->helper('catalog/image')->init($_product, 'image')->resize($popupImageSize[0], $popupImageSize[1]);
     }
-       
+
 ?>
 
 <?php if(!$_lightboxConfig['defaulzoom']): ?>
 
 <?php
-	$maintitle = $this->htmlEscape($_product->getImageLabel());
-	if(($_lightboxConfig['productName'] != 0) && empty($maintitle)):
-	        $maintitle  = $_product->getName();
-	endif;
+    $maintitle = $this->htmlEscape($_product->getImageLabel());
+    if (($_lightboxConfig['productName'] != 0) && empty($maintitle)) :
+        $maintitle  = $_product->getName();
+    endif;
 ?>
 
-<a href="<?php echo $image; ?>" 
-    rel="lightbox[rotation]" 
+<a href="<?php echo $image; ?>"
+    rel="lightbox[rotation]"
     title="<?php echo $maintitle ;?>"
     onclick="return false;"
 ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
@@ -48,12 +48,10 @@
 
 <?php else: ?>
 
-<p class="product-image-zoom">
-    <?php
-        $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
-        echo $_helper->productAttribute($_product, $_img, 'image')
-    ?>
-</p>
+<p class="product-image-zoom"><?php
+    $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+    echo $_helper->productAttribute($_product, $_img, 'image')
+?></p>
 <p class="a-center" id="track_hint"><?php echo $this->__('Double click on above image to view full picture') ?></p>
 
 <div class="zoom">
@@ -78,20 +76,20 @@
     <h4><?php echo $this->__('More Views') ?></h4>
     <ul>
     <?php foreach ($this->getGalleryImages() as $_image): ?>
-	<?php
-	$subtitle = $this->htmlEscape($_image->getLabel());
-	if(($_lightboxConfig['productName'] != 0) && empty($subtitle)):
-	        $subtitle  = $_product->getName();
-	endif;
-	?>
-    <li>
-        <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($popupImageSize[0], $popupImageSize[1]); ?>" 
-            rel="lightbox[rotation]" 
-            title="<?php echo $subtitle; ?>"
-            onclick="return false;"
-        ><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($additionalImageSize[0], $additionalImageSize[1]); ?>" alt="<?php echo $subtitle; ?>"
-        /></a>
-    </li>
+        <?php
+        $subtitle = $this->htmlEscape($_image->getLabel());
+        if(($_lightboxConfig['productName'] != 0) && empty($subtitle)):
+                $subtitle  = $_product->getName();
+        endif;
+        ?>
+        <li>
+            <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($popupImageSize[0], $popupImageSize[1]); ?>"
+                rel="lightbox[rotation]"
+                title="<?php echo $subtitle; ?>"
+                onclick="return false;"
+            ><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($additionalImageSize[0], $additionalImageSize[1]); ?>" alt="<?php echo $subtitle; ?>"
+            /></a>
+        </li>
     <?php endforeach; ?>
     </ul>
 </div>
