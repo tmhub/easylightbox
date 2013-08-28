@@ -296,13 +296,13 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
       } else if (key === 'p' || keycode === KEYCODE_LEFTARROW) {
         if (this.currentImageIndex !== 0) {
           this.changeImage(this.currentImageIndex - 1);
-        } else if (this.options.wrapAround) {
+        } else if (this.options.wrapAround && this.album.length > 1) {
           this.changeImage(this.album.length - 1);
         }
       } else if (key === 'n' || keycode === KEYCODE_RIGHTARROW) {
         if (this.currentImageIndex !== this.album.length - 1) {
           this.changeImage(this.currentImageIndex + 1);
-        } else if (this.options.wrapAround) {
+        } else if (this.options.wrapAround && this.album.length > 1) {
           this.changeImage(0);
         }
       }
