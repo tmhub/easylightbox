@@ -4,10 +4,8 @@ AIM = {
         var d = document.createElement('DIV');
         d.innerHTML = '<iframe style="display:none" src="about:blank" id="'+n+'" name="'+n+'" onload="AIM.loaded(\''+n+'\')"></iframe>';
         document.body.appendChild(d);
-
         var i = document.getElementById(n);
         i.onComplete = this.onComplete;
-
         return n;
     },
 
@@ -19,7 +17,7 @@ AIM = {
         $('loading-mask').setStyle({
             zIndex: 1005
         }).show();
-        $$('input[name="parameters[imagepath]"]')[0].value = '';
+        $$('input[name="parameters[path]"]')[0].value = '';
         this.formEl = f;
         this.formAction = f.getAttribute('action');
         f.setAttribute('action', c.action);
@@ -55,7 +53,11 @@ AIM = {
     },
 
     onComplete: function(response) {
-        response = response.evalJSON();
-        $$('input[name="parameters[imagepath]"]')[0].value = response.imagepath;
+        try {
+            response = response.evalJSON();
+        } catch (e) {
+            return alert(e.message);
+        }
+        $$('input[name="parameters[path]"]')[0].value = response.path;
     }
 };

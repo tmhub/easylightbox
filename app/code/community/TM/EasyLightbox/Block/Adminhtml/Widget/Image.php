@@ -6,12 +6,10 @@ class TM_EasyLightbox_Block_Adminhtml_Widget_Image
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         return '<tr>
-                <td class="label"><label>Image</label></td>
-                <td class="value">
-                    <script type="text/javascript" src="' . $this->getJsUrl('tm/easylightbox/ajaxUpload.js') . '"></script>
-                    <input type="file" name="image" onchange="return AIM.submit($(this).up(\'form\'), {action: \'' . $this->getUrl('easylightbox/adminhtml_index/save') . '\'})">
-                    <input type="hidden" name="imagepath">
-                </td>
-            </tr>';
+            <td class="label"><label>' . $this->__('Image') . '</label></td>
+            <td class="value" id="file-easylightbox-wrapper">
+                <input type="file" name="image" onchange="return AIM.submit($(this).up(\'form\'), {action: \'' . $this->getUrl('adminhtml/easylightbox_image/save') . '\'})">
+            </td>
+        </tr>';
     }
 }

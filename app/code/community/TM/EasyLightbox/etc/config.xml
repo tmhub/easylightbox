@@ -2,7 +2,7 @@
 <config>
     <modules>
         <TM_EasyLightbox>
-            <version>2.0.1</version>
+            <version>3.0.0</version>
         </TM_EasyLightbox>
     </modules>
     <global>
@@ -14,7 +14,6 @@
         <models>
             <easylightbox>
                 <class>TM_EasyLightbox_Model</class>
-                <resourceModel>easylightbox_mysql4</resourceModel>
             </easylightbox>
         </models>
         <blocks>
@@ -22,33 +21,13 @@
                 <class>TM_EasyLightbox_Block</class>
             </easylightbox>
         </blocks>
-        <resources>
-            <easylightbox_setup>
-                <setup>
-                    <module>TM_EasyLightbox</module>
-                </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
-            </easylightbox_setup>
-            <easylightbox_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </easylightbox_write>
-            <easylightbox_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </easylightbox_read>
-        </resources>
     </global>
 
     <frontend>
         <layout>
             <updates>
                 <easylightbox>
-                    <file>easylightbox.xml</file>
+                    <file>tm/easylightbox.xml</file>
                 </easylightbox>
             </updates>
         </layout>
@@ -76,7 +55,7 @@
         <layout>
             <updates>
                 <easylightbox>
-                    <file>easylightbox.xml</file>
+                    <file>tm/easylightbox.xml</file>
                 </easylightbox>
             </updates>
         </layout>
@@ -84,32 +63,34 @@
 
     <admin>
         <routers>
-            <easylightbox>
-                <use>admin</use>
-                <args>
-                    <module>TM_EasyLightbox</module>
-                    <frontName>easylightbox</frontName>
-                </args>
-            </easylightbox>
+             <adminhtml>
+                 <args>
+                     <modules>
+                         <easylightbox before="Mage_Adminhtml">TM_EasyLightbox_Adminhtml</easylightbox>
+                     </modules>
+                 </args>
+             </adminhtml>
         </routers>
     </admin>
 
     <default>
-        <easy_lightbox>
+        <tm_easylightbox>
             <general>
                 <enabled>0</enabled>
-                <defaulzoom>0</defaulzoom>
-                <mainImageSize>265_265</mainImageSize>
-                <popupImageSize>500_500</popupImageSize>
-                <additionalImageSize>60_60</additionalImageSize>
-                <productName>0</productName>
-                <animate>1</animate>
-                <overlayOpacity>0.8</overlayOpacity>
-                <resizeSpeed>7</resizeSpeed>
-                <borderSize>10</borderSize>
+                <add_jquery>0</add_jquery>
+                <keep_magento_zoom>0</keep_magento_zoom>
+                <lightbox_image_size>,</lightbox_image_size>
+                <main_image_size>265,265</main_image_size>
+                <thumbnail_image_size>60,60</thumbnail_image_size>
+                <use_product_name_for_title>0</use_product_name_for_title>
+                <resizeDuration>700</resizeDuration>
+                <fadeDuration>500</fadeDuration>
+                <wrapAround>1</wrapAround>
+                <fitImagesInViewport>1</fitImagesInViewport>
+                <showImageNumberLabel>1</showImageNumberLabel>
                 <labelImage>Image</labelImage>
                 <labelOf>of</labelOf>
             </general>
-        </easy_lightbox>
+        </tm_easylightbox>
     </default>
 </config>
