@@ -58,6 +58,10 @@ AIM = {
         } catch (e) {
             return alert(e.message);
         }
-        $$('input[name="parameters[path]"]')[0].value = response.path;
+        if (response.success) {          
+            $$('input[name="parameters[path]"]')[0].value = response.path;
+        } else {
+            alert(response.message);
+        }
     }
 };
