@@ -1,0 +1,163 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "5361392a03d39accbde06ac388ca23fd",
+    "packages": [
+        {
+            "name": "magento-hackathon/magento-composer-installer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magento-hackathon/magento-composer-installer.git",
+                "reference": "5a4e95b44b5f5b845b7f982b14d932b372bc9645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magento-hackathon/magento-composer-installer/zipball/5a4e95b44b5f5b845b7f982b14d932b372bc9645",
+                "reference": "5a4e95b44b5f5b845b7f982b14d932b372bc9645",
+                "shasum": ""
+            },
+            "require-dev": {
+                "composer/composer": "*",
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "magento-hackathon/composer-command-integrator": "*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "composer-command-registry": [
+                    "MagentoHackathon\\Composer\\Magento\\Command\\DeployCommand"
+                ],
+                "class": "MagentoHackathon\\Composer\\Magento\\Installer"
+            },
+            "autoload": {
+                "psr-0": {
+                    "MagentoHackathon\\Composer\\Magento": "src/"
+                }
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Fahlke aka Flyingmana",
+                    "email": "flyingmana@googlemail.com"
+                },
+                {
+                    "name": "Jörg Weller",
+                    "email": "weller@flagbit.de"
+                },
+                {
+                    "name": "Karl Spies",
+                    "email": "karl.spies@gmx.net"
+                },
+                {
+                    "name": "Tobias Vogt",
+                    "email": "tobi@webguys.de"
+                },
+                {
+                    "name": "David Fuhr",
+                    "email": "fuhr@flagbit.de"
+                },
+                {
+                    "name": "Vinai Kopp",
+                    "email": "vinai@netzarbeiter.com"
+                }
+            ],
+            "description": "Composer installer for Magento modules",
+            "homepage": "https://github.com/magento-hackathon/magento-composer-installer",
+            "keywords": [
+                "composer-installer",
+                "magento"
+            ],
+            "support": {
+                "source": "https://github.com/magento-hackathon/magento-composer-installer/tree/master",
+                "issues": "https://github.com/magento-hackathon/magento-composer-installer/issues"
+            },
+            "time": "2013-12-10 10:35:46"
+        },
+        {
+            "name": "tm/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tmhub/core.git",
+                "reference": "ec7626af5ce55c01811b5ad37ed11b0e17f44d34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tmhub/core/zipball/ec7626af5ce55c01811b5ad37ed11b0e17f44d34",
+                "reference": "ec7626af5ce55c01811b5ad37ed11b0e17f44d34",
+                "shasum": ""
+            },
+            "require": {
+                "magento-hackathon/magento-composer-installer": "*"
+            },
+            "type": "magento-module",
+            "extra": {
+                "map": [
+                    [
+                        "app/code/community/TM/Core",
+                        "app/code/community/TM/Core"
+                    ],
+                    [
+                        "app/design/adminhtml/default/default/layout/tmcore.xml",
+                        "app/design/adminhtml/default/default/layout/tmcore.xml"
+                    ],
+                    [
+                        "app/design/adminhtml/default/default/template/tmcore",
+                        "app/design/adminhtml/default/default/template/tmcore"
+                    ],
+                    [
+                        "app/etc/modules/TM_Core.xml",
+                        "app/etc/modules/TM_Core.xml"
+                    ],
+                    [
+                        "app/locale/en_US/TM_Core.csv",
+                        "app/locale/en_US/TM_Core.csv"
+                    ],
+                    [
+                        "js/tm/adminhtml/core",
+                        "js/tm/adminhtml/core"
+                    ]
+                ],
+                "changelog": ""
+            },
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Template Masters Team",
+                    "email": "support@templates-master.com"
+                }
+            ],
+            "description": "Templates Master core functionality module",
+            "homepage": "https://github.com/tmhub/core",
+            "support": {
+                "source": "https://github.com/tmhub/core/tree/master",
+                "issues": "https://github.com/tmhub/core/issues"
+            },
+            "time": "2013-10-15 14:10:04"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
