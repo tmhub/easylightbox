@@ -30,6 +30,8 @@ body:after {
 .lightbox .lb-image {
   display: block;
   height: auto;
+  max-width: none;
+  max-height: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
