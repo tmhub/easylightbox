@@ -1,0 +1,8 @@
+app/code/community/TM/EasyLightbox                              app/code/community/TM/EasyLightbox
+app/design/adminhtml/default/default/layout/tm/easylightbox.xml app/design/adminhtml/default/default/layout/tm/easylightbox.xml
+app/design/frontend/base/default/layout/tm/easylightbox.xml     app/design/frontend/base/default/layout/tm/easylightbox.xml
+app/design/frontend/base/default/template/tm/easylightbox       app/design/frontend/base/default/template/tm/easylightbox
+app/etc/modules/TM_EasyLightbox.xml                             app/etc/modules/TM_EasyLightbox.xml
+app/locale/en_US/TM_EasyLightbox.csv                            app/locale/en_US/TM_EasyLightbox.csv
+js/tm/easylightbox                                              js/tm/easylightbox
+media/easylightbox                                              media/easylightbox
