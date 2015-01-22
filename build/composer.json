@@ -1,7 +1,8 @@
 {
     "minimum-stability": "dev",
     "require": {
-        "tm/easylightbox": "*"
+        "tm/easylightbox": "*",
+        "symfony/console":"<2.5"
     },
     "repositories": [
         {
