@@ -24,6 +24,7 @@
         data-lightbox="rotation"
         title="<?php echo $mainTitle ;?>"
         onclick="return false;"
+        class="main-image"
     ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
     /></a>
 <?php else: ?>
@@ -78,3 +79,5 @@
         </ul>
     </div>
 <?php endif; ?>
+
+<?php echo $this->getChildHtml('after'); ?>

@@ -1,3 +1,6 @@
+.product-img-box .main-image { display: block; margin: 0 auto; text-align: center; }
+.product-img-box .more-views h4 { margin: 0 0 5px; }
+
 /* line 7, ../sass/lightbox.sass */
 body:after {
   content: url(../img/close.png) url(../img/loading.gif) url(../img/prev.png) url(../img/next.png);
