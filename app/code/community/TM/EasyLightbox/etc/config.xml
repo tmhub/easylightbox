@@ -83,8 +83,8 @@
                 <main_image_size>265,265</main_image_size>
                 <thumbnail_image_size>60,60</thumbnail_image_size>
                 <use_product_name_for_title>0</use_product_name_for_title>
-                <resizeDuration>700</resizeDuration>
-                <fadeDuration>500</fadeDuration>
+                <resizeDuration>400</resizeDuration>
+                <fadeDuration>200</fadeDuration>
                 <wrapAround>1</wrapAround>
                 <fitImagesInViewport>1</fitImagesInViewport>
                 <showImageNumberLabel>1</showImageNumberLabel>
