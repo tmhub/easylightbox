@@ -9,7 +9,7 @@ document.observe("dom:loaded", function () {
             var img = $j('.main-image img');
 
             // prevent image size increasing
-            if (!img.hasClass('resized')) {
+            if (!img.hasClass('resized') && img.height()) {
                 img.addClass('resized')
                     .css({
                         'max-height': img.height()
