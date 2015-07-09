@@ -24,4 +24,9 @@ class TM_EasyLightbox_Adminhtml_Easylightbox_ImageController extends Mage_Adminh
             )));
         }
     }
+
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('templates_master/easylightbox/image');
+    }
 }
