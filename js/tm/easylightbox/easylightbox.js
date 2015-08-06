@@ -9,12 +9,23 @@ document.observe("dom:loaded", function () {
             var img = $j('.main-image img');
 
             // prevent image size increasing
-            if (!img.hasClass('resized') && img.height()) {
+            function imageLoaded(img) {
                 img.addClass('resized')
                     .css({
                         'max-height': img.height()
                     });
             }
+
+            var alt = img.attr('alt');
+            img.attr('alt', ''); // remove alt to calculte image height properly
+            if (!img.hasClass('resized') && img.height()) {
+                imageLoaded(img);
+            } else {
+                img.load(function() {
+                    imageLoaded(img);
+                });
+            }
+            img.attr('alt', alt);
 
             $j('.main-image').attr('href', image.attr('src'));
             var srcset = img.attr('srcset'),
