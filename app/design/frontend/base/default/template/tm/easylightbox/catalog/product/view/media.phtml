@@ -52,7 +52,7 @@
 <?php if (count($this->getGalleryImages()) > 0) : ?>
     <div class="more-views">
         <h4><?php echo $this->__('More Views') ?></h4>
-        <ul>
+        <ul class="product-image-thumbs">
         <?php foreach ($this->getGalleryImages() as $_image): ?>
             <?php
             $subtitle = $this->htmlEscape($_image->getLabel());
