@@ -74,6 +74,11 @@
     </admin>
 
     <default>
+        <subscriptionchecker>
+            <ignored_sections>
+                <tm_easylightbox/>
+            </ignored_sections>
+        </subscriptionchecker>
         <tm_easylightbox>
             <general>
                 <enabled>0</enabled>
