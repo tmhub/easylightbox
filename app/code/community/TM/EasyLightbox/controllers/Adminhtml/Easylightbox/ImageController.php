@@ -11,6 +11,13 @@ class TM_EasyLightbox_Adminhtml_Easylightbox_ImageController extends Mage_Adminh
                 $uploader->setFilesDispersion(true);
                 $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
                 $uploader->setAllowRenameFiles(true);
+                if (@class_exists('Mage_Core_Model_File_Validator_Image')) {
+                    $uploader->addValidateCallback(
+                        Mage_Core_Model_File_Validator_Image::NAME,
+                        Mage::getModel('core/file_validator_image'),
+                        'validate'
+                    );
+                }
                 $result = $uploader->save($path);
             } catch (Exception $e) {
                 return $this->getResponse()->setBody(Mage::helper('core')->jsonEncode(array(
