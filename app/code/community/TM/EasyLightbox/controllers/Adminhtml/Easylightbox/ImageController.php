@@ -4,9 +4,13 @@ class TM_EasyLightbox_Adminhtml_Easylightbox_ImageController extends Mage_Adminh
 {
     public function saveAction()
     {
-        $path = Mage::getBaseDir('media') . '/easylightbox/';
+        $path = Mage::getBaseDir('media') . '/easylightbox';
         if ($this->getRequest()->isPost()) {
             try{
+                if (!is_writeable($path) && !@mkdir($path, 0777, true)) {
+                    Mage::throwException(Mage::helper('core')->__('Unable to create directory: %s', $path));
+                }
+
                 $uploader = new Varien_File_Uploader('image');
                 $uploader->setFilesDispersion(true);
                 $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));

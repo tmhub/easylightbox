@@ -34,8 +34,12 @@
                 $("loading-mask").hide();
                 try {
                     response = response.evalJSON();
-                    $("lightbox-image-upload").up("form")["parameters[path]"].value = response.path;
-                    $("lightbox-preview-img").src = "<?php echo $imageBaseUrl ?>" + response.path;
+                    if (response.path) {
+                        $("lightbox-image-upload").up("form")["parameters[path]"].value = response.path;
+                        $("lightbox-preview-img").src = "<?php echo $imageBaseUrl ?>" + response.path;
+                    } else if (response.message) {
+                        alert(response.message);
+                    }
                 } catch (e) {
                     alert(response);
                 }
