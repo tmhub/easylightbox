@@ -3,23 +3,15 @@
     "type": "magento-module",
     "homepage": "https://github.com/tmhub/easylightbox",
     "license": "OSL-3.0",
-    "description": "Lightbox library integration",
-    "version": "3.1.2",
+    "description": "Lightbox for Magento Product and CMS pages",
     "authors": [
         {
             "name": "Templates-Master Team",
             "email": "support@templates-master.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "tm/core": "*",
         "tm/catalog-configurable-swatches": "*"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://tmhub.github.io/packages/"
-        }
-    ]
+    }
 }
