@@ -14,17 +14,12 @@
         </reference>
     </default>
 
-    <catalog_product_view>
-        <update handle="easylightbox_replace_image"/>
-    </catalog_product_view>
-
-    <review_product_list>
-        <update handle="easylightbox_replace_image"/>
-    </review_product_list>
-
+    <!-- @see TM_EasyLightbox_Model_Observer::applyLayoutHadles -->
     <easylightbox_replace_image>
         <reference name="product.info.media">
-            <action method="setTemplate" ifconfig="tm_easylightbox/general/enabled"><template>tm/easylightbox/catalog/product/view/media.phtml</template></action>
+            <action method="setTemplate">
+                <template>tm/easylightbox/catalog/product/view/media.phtml</template>
+            </action>
         </reference>
     </easylightbox_replace_image>
 </layout>

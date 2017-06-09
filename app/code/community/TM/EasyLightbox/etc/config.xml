@@ -26,7 +26,7 @@
     <frontend>
         <layout>
             <updates>
-                <easylightbox>
+                <easylightbox module="TM_EasyLightbox">
                     <file>tm/easylightbox.xml</file>
                 </easylightbox>
             </updates>
@@ -40,6 +40,16 @@
                 </TM_EasyLightbox>
             </modules>
         </translate>
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <easylightbox>
+                        <class>easylightbox/observer</class>
+                        <method>applyLayoutHadles</method>
+                    </easylightbox>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
     </frontend>
 
     <adminhtml>

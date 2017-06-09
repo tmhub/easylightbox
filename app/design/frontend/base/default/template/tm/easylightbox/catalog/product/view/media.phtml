@@ -10,44 +10,20 @@
     if (is_numeric($lightboxSize[0])) {
         $image = $this->helper('catalog/image')->init($_product, 'image')->resize($lightboxSize[0], $lightboxSize[1]);
     }
+
+    $mainTitle = $this->htmlEscape($_product->getImageLabel());
+    if ($useProductNameForTitle && empty($mainTitle)) :
+        $mainTitle = $_product->getName();
+    endif;
 ?>
 
-<?php if (!Mage::getStoreConfig('tm_easylightbox/general/keep_magento_zoom')) : ?>
-    <?php
-        $mainTitle = $this->htmlEscape($_product->getImageLabel());
-        if ($useProductNameForTitle && empty($mainTitle)) :
-            $mainTitle = $_product->getName();
-        endif;
-    ?>
-
-    <a href="<?php echo $image; ?>"
-        data-lightbox="rotation"
-        title="<?php echo $mainTitle ;?>"
-        onclick="return false;"
-        class="main-image"
-    ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
-    /></a>
-<?php else: ?>
-    <p class="product-image-zoom"><?php
-        $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
-        echo $_helper->productAttribute($_product, $_img, 'image')
-    ?></p>
-    <p class="a-center" id="track_hint"><?php echo $this->__('Double click on above image to view full picture') ?></p>
-    <div class="zoom">
-        <div class="image-zoom" id="track_outer">
-            <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>" alt="<?php echo $this->__('Zoom Out') ?>" class="btn-zoom-out" />
-            <div id="track">
-                <div id="handle"></div>
-            </div>
-            <img id="zoom_in" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_in.gif') ?>" alt="<?php echo $this->__('Zoom In') ?>" class="btn-zoom-in" />
-        </div>
-    </div>
-    <script type="text/javascript">
-        Event.observe(window, 'load', function() {
-            product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
-        });
-    </script>
-<?php endif; ?>
+<a href="<?php echo $image; ?>"
+    data-lightbox="rotation"
+    title="<?php echo $mainTitle ;?>"
+    onclick="return false;"
+    class="main-image"
+><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
+/></a>
 
 <?php if (count($this->getGalleryImages()) > 0) : ?>
     <div class="more-views">
