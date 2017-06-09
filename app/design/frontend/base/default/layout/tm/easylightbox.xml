@@ -4,7 +4,6 @@
     <default>
         <reference name="head">
             <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js_css</type><name>tm/easylightbox/lightbox/css/lightbox.css</name></action>
-            <action method="addItem" ifconfig="tm_easylightbox/general/add_jquery"><type>js</type><name>tm/easylightbox/lightbox/js/jquery-1.10.2.min.js</name></action>
             <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js</type><name>tm/easylightbox/lightbox/js/lightbox.js</name></action>
             <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js</type><name>tm/easylightbox/easylightbox.js</name></action>
         </reference>

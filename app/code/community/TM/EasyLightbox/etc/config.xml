@@ -82,7 +82,7 @@
         <tm_easylightbox>
             <general>
                 <enabled>0</enabled>
-                <add_jquery>0</add_jquery>
+                <jquery><![CDATA[Use "System > Configuration > Templates-Master > Core" settings to enable jQuery]]></jquery>
                 <keep_magento_zoom>0</keep_magento_zoom>
                 <lightbox_image_size>,</lightbox_image_size>
                 <main_image_size>265,265</main_image_size>
