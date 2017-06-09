@@ -85,8 +85,8 @@
                 <jquery><![CDATA[Use "System > Configuration > Templates-Master > Core" settings to enable jQuery]]></jquery>
                 <keep_magento_zoom>0</keep_magento_zoom>
                 <lightbox_image_size>,</lightbox_image_size>
-                <main_image_size>265,265</main_image_size>
-                <thumbnail_image_size>60,60</thumbnail_image_size>
+                <main_image_size>600,600</main_image_size>
+                <thumbnail_image_size>100,100</thumbnail_image_size>
                 <use_product_name_for_title>0</use_product_name_for_title>
                 <resizeDuration>400</resizeDuration>
                 <fadeDuration>200</fadeDuration>
