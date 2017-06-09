@@ -93,8 +93,7 @@
                 <wrapAround>1</wrapAround>
                 <fitImagesInViewport>1</fitImagesInViewport>
                 <showImageNumberLabel>1</showImageNumberLabel>
-                <labelImage>Image</labelImage>
-                <labelOf>of</labelOf>
+                <albumLabel>Image %1 of %2</albumLabel>
             </general>
         </tm_easylightbox>
     </default>
