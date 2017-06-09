@@ -174,12 +174,8 @@ class TM_EasyLightbox_Model_Image extends Mage_Core_Model_Abstract
                 $file = null;
             }
         }
-        if (!$file) {
-            $file = '/placeholder/not_image.jpg';
-        }
 
         $baseFile = $baseDir . $file;
-
         if ((!$file) || (!file_exists($baseFile))) {
             throw new Exception(Mage::helper('catalog')->__('Image file not found'));
         }
