@@ -6,3 +6,4 @@ app/design/frontend/base/default/template/tm/easylightbox       app/design/front
 app/etc/modules/TM_EasyLightbox.xml                             app/etc/modules/TM_EasyLightbox.xml
 app/locale/en_US/TM_EasyLightbox.csv                            app/locale/en_US/TM_EasyLightbox.csv
 js/tm/easylightbox                                              js/tm/easylightbox
+skin/adminhtml/default/default/images/widget/easylightbox__image.gif skin/adminhtml/default/default/images/widget/easylightbox__image.gif
